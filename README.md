@@ -1,24 +1,68 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Ticket QR Code Anime
 
-## Getting Started
+Ce projet est une application web développée avec [Next.js](https://nextjs.org) qui permet de générer et gérer des tickets QR code pour des événements anime.
 
-First, run the development server:
+## Fonctionnalités
+
+- Génération de tickets QR code personnalisés
+- Interface utilisateur moderne et responsive
+- Gestion des événements anime
+- Système de validation des tickets
+
+## Prérequis
+
+- Node.js 18.0 ou supérieur
+- npm ou yarn
+
+## Installation
+
+1. Clonez le dépôt :
+```bash
+git clone [URL_DU_REPO]
+cd ticketqrcodeanime
+```
+
+2. Installez les dépendances :
+```bash
+npm install
+# ou
+yarn install
+```
+
+## Démarrage
+
+Pour lancer le serveur de développement :
 
 ```bash
 npm run dev
-# or
+# ou
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Ouvrez [http://localhost:3000](http://localhost:3000) dans votre navigateur pour voir l'application.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Structure du Projet
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- `/app` - Pages et composants de l'application
+- `/components` - Composants réutilisables
+- `/public` - Fichiers statiques
+- `/styles` - Fichiers de style
+
+## Technologies Utilisées
+
+- Next.js 14
+- React
+- TypeScript
+- Tailwind CSS
+- QR Code Generator
+
+## Contribution
+
+Les contributions sont les bienvenues ! N'hésitez pas à ouvrir une issue ou à soumettre une pull request.
+
+## Licence
+
+Ce projet est sous licence MIT.
 
 ## Learn More
 
