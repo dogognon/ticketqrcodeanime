@@ -3,6 +3,27 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --primary: #3b82f6;
+  --primary-hover: #2563eb;
+  --secondary: #38bdf8;
+  --secondary-hover: #0ea5e9;
+  --card-bg: #ffffff;
+  --card-border: #e5e7eb;
+  --text-primary: #171717;
+  --text-secondary: #4b5563;
+}
+
+.dark {
+  --background: #0a0a0a;
+  --foreground: #ededed;
+  --primary: #3b82f6;
+  --primary-hover: #60a5fa;
+  --secondary: #38bdf8;
+  --secondary-hover: #7dd3fc;
+  --card-bg: #1a1a1a;
+  --card-border: #2d2d2d;
+  --text-primary: #ededed;
+  --text-secondary: #9ca3af;
 }
 
 @theme inline {
@@ -23,4 +44,102 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.wave-container {
+  position: relative;
+  padding: 2px;
+  border-radius: 16px;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.wave-container::before {
+  content: '';
+  position: absolute;
+  inset: -50%;
+  background: conic-gradient(from 0deg at 50% 50%,
+    #3b82f6 0deg,
+    #38bdf8 120deg,
+    #3b82f6 240deg,
+    #38bdf8 360deg
+  );
+  animation: rotate 4s linear infinite;
+  z-index: -2;
+}
+
+.wave-container::after {
+  content: '';
+  position: absolute;
+  inset: -50%;
+  background: conic-gradient(from 180deg at 50% 50%,
+    #38bdf8 0deg,
+    #3b82f6 120deg,
+    #38bdf8 240deg,
+    #3b82f6 360deg
+  );
+  animation: rotate 4s linear infinite reverse;
+  filter: blur(20px);
+  opacity: 0.7;
+  z-index: -1;
+}
+
+.wave-container > div {
+  background: var(--card-bg);
+  border-radius: 14px;
+  position: relative;
+  z-index: 1;
+  border: 1px solid var(--card-border);
+}
+
+@keyframes gradient-xy {
+  0%, 100% {
+    background-size: 400% 400%;
+    background-position: left top;
+  }
+  25% {
+    background-size: 400% 400%;
+    background-position: right top;
+  }
+  50% {
+    background-size: 400% 400%;
+    background-position: right bottom;
+  }
+  75% {
+    background-size: 400% 400%;
+    background-position: left bottom;
+  }
+}
+
+@keyframes shadow-pulse {
+  0%, 100% {
+    filter: drop-shadow(0 0 8px rgba(56, 189, 248, 0.3))
+           drop-shadow(0 0 16px rgba(59, 130, 246, 0.3));
+  }
+  50% {
+    filter: drop-shadow(0 0 16px rgba(56, 189, 248, 0.5))
+           drop-shadow(0 0 32px rgba(59, 130, 246, 0.5));
+  }
+}
+
+.animate-gradient-xy {
+  animation: gradient-xy 15s ease infinite;
+}
+
+.animate-shadow-pulse {
+  animation: shadow-pulse 3s ease-in-out infinite;
 }

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+  <rect width="20" height="20" fill="none"/>
+  <circle cx="10" cy="10" r="1" fill="currentColor"/>
+  <circle cx="0" cy="0" r="1" fill="currentColor"/>
+  <circle cx="20" cy="0" r="1" fill="currentColor"/>
+  <circle cx="0" cy="20" r="1" fill="currentColor"/>
+  <circle cx="20" cy="20" r="1" fill="currentColor"/>
+</svg> 
